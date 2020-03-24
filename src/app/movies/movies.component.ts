@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Movie } from '../movie';
 
 @Component({
     selector:'movies',//<div class="movies"></"div>
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
 })
 export class MoviesComponent
 {
-
+    title="Movie List";
+    movie:Movie={
+        id:1,
+        name:"Movie Name"
+    };
+    getTitle()
+    {
+        return this.title;
+    }
 }
