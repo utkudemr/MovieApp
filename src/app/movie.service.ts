@@ -1,18 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Movie } from './movie';
 import { Movies } from './movies/movie.datasource';
-
+import {Observable, of} from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class MovieService {
 
   constructor() { }
-  ngOnInit(): void {
-    this.getMovies();
-  }
-  getMovies():Movie[]
+  
+  getMovies(): Observable<Movie[]>
   {
-    return Movies;
+    return of(Movies);
   }
 }
